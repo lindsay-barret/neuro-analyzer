@@ -1,0 +1,203 @@
+# =====================================================================
+# CRITICAL — Patient data and PHI must NEVER be committed
+# =====================================================================
+# Any file matching these patterns is excluded by default.
+# If you need to add a real exception, do it explicitly with `git add -f`,
+# but FIRST verify the file contains no PHI / patient identifiers.
+
+# Medical imaging formats
+*.dcm
+*.DCM
+*.dicom
+*.DICOM
+*.nii
+*.nii.gz
+*.mgh
+*.mgz
+*.img
+*.hdr
+*.nrrd
+
+# Common patient data directory names
+data/
+patient_data/
+patients/
+subjects/
+real_data/
+my_data/
+private/
+*_patient/
+*_paciente/
+
+# Common reanalysis output directories
+output/
+outputs/
+results/
+reports/
+fastsurfer_output/
+freesurfer_subjects/
+SUBJECTS_DIR/
+
+# External validation data and outputs (Phase 2.5+)
+# These directories normally live OUTSIDE the repo (e.g. ../validation_data/),
+# but the patterns are listed here as a belt-and-braces precaution in case
+# a contributor runs the validation scripts from a different working dir.
+validation_data/
+validation_outputs/
+
+# Common patient identifiers in filenames (defensive)
+**/*paciente*
+**/*patient*
+**/*PHI*
+**/*PII*
+
+# =====================================================================
+# Secrets and credentials
+# =====================================================================
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+secrets/
+credentials/
+api_keys.txt
+.aws/
+.gcloud/
+
+# FreeSurfer license (must NEVER be distributed)
+license.txt
+freesurfer_license.txt
+**/freesurfer/license*
+
+# =====================================================================
+# Audit and local-only documentation
+# =====================================================================
+audit-report.md
+audit-*.md
+audit_fr_*.txt
+glossary_phase_*.md
+internal-notes.md
+TODO-private.md
+patterns_audit_phase_*.md
+
+# =====================================================================
+# Patient context files (kept local — never distributed)
+# Pattern (a): YAML/JSON loaded at runtime via --context-file or
+# PATIENT_CONTEXT_FILE env var. Real cases stay on the user's machine.
+# =====================================================================
+*-context.yaml
+*-context.yml
+*-context.json
+patient-context.*
+
+# Exception: the example context file IS published intentionally.
+# It contains a fully fictional case for documentation purposes.
+!examples/example-context.yaml
+
+# =====================================================================
+# Windows accident: Claude Code / other tools sometimes literal-interpret
+# `~` and create a `~/` folder inside the project instead of expanding to
+# $HOME. Block both forms so it can never sneak back in.
+# =====================================================================
+/~/
+~/
+
+# =====================================================================
+# Python
+# =====================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb_meta
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+
+# Type checking
+.mypy_cache/
+.pyre/
+.ruff_cache/
+
+# =====================================================================
+# IDE and OS
+# =====================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =====================================================================
+# Docker
+# =====================================================================
+.docker/
+
+# =====================================================================
+# Logs and temp
+# =====================================================================
+*.log
+*.tmp
+logs/
+tmp/
+temp/
+
+# =====================================================================
+# Large files — should never be in git anyway
+# =====================================================================
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+
+# =====================================================================
+# Documentation builds
+# =====================================================================
+docs/_build/
+site/
+
+# =====================================================================
+# IDE / AI tooling local config
+# =====================================================================
+.claude/

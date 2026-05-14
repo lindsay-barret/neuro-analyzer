@@ -1,0 +1,59 @@
+cff-version: 1.2.0
+message: "If you use this software in your research or work, please cite it as below."
+type: software
+title: "neuro-analyzer: Quantitative pediatric MRI re-analysis pipeline"
+abstract: >-
+  An open-source pipeline for quantitative re-analysis of pediatric structural
+  brain MRI, orchestrating established neuroimaging tools (FastSurfer, dcm2niix,
+  nibabel) with AI-assisted visual analysis to produce quantitative reports for
+  research and educational purposes. Not a medical device.
+authors:
+  - family-names: "Barret"
+    given-names: "Lindsay"
+    orcid: "https://orcid.org/0009-0004-7411-3240"
+    affiliation: "Independent researcher, Guadalajara, México"
+    email: "lindsay.barret.research@gmail.com"
+keywords:
+  - neuroimaging
+  - pediatric
+  - mri
+  - cortical-malformation
+  - pachygyria
+  - quantitative-analysis
+  - research-tool
+  - fastsurfer
+  - claude-ai
+license: MIT
+repository-code: "https://github.com/lindsay-barret/neuro-analyzer"
+url: "https://github.com/lindsay-barret/neuro-analyzer"
+version: 0.1.0
+date-released: "2026-05-15"  # actualizar al hacer release / update at release time
+# DOI a agregar después del primer release Zenodo:
+# doi: 10.5281/zenodo.XXXXXXX
+# identifiers:
+#   - type: doi
+#     value: 10.5281/zenodo.XXXXXXX
+#     description: "Zenodo archive of v0.1.0"
+references:
+  - type: software
+    title: "FastSurfer"
+    authors:
+      - name: "Henschel, L. et al."
+    repository-code: "https://github.com/Deep-MI/FastSurfer"
+    notes: "Used for segmentation, volumetry, and cortical thickness estimation."
+  - type: software
+    title: "dcm2niix"
+    authors:
+      - name: "Li, X. et al."
+    repository-code: "https://github.com/rordenlab/dcm2niix"
+    notes: "Used for DICOM to NIfTI conversion."
+  - type: software
+    title: "nibabel"
+    repository-code: "https://github.com/nipy/nibabel"
+    notes: "Used for NIfTI I/O."
+  - type: software
+    title: "FreeSurfer"
+    authors:
+      - name: "Fischl, B."
+    url: "https://surfer.nmr.mgh.harvard.edu/"
+    notes: "Optional dependency for Local Gyrification Index. Not bundled. Academic license required from FreeSurfer project."

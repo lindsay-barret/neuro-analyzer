@@ -1,0 +1,43 @@
+# Pre-commit hooks for neuro-analyzer.
+#
+# Install once per clone:
+#   pip install -r requirements-dev.txt
+#   pre-commit install
+#
+# Run manually on the whole repo:
+#   pre-commit run --all-files
+#
+# Scope: secrets, lint, large files, identifying patterns. No formatter
+# (black / ruff-format) — formatting changes are out of scope until v0.2
+# to avoid mass-rewriting the repo mid-development.
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+        args: [--maxkb=500]
+      - id: check-yaml
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: detect-private-key
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.0
+    hooks:
+      - id: ruff
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.21.0
+    hooks:
+      - id: gitleaks
+
+  - repo: local
+    hooks:
+      - id: forbidden-patterns
+        name: Block identifying patterns (CLAUDE.md §1)
+        entry: python scripts/check_forbidden_patterns.py
+        language: python
+        types: [text]

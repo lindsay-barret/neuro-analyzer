@@ -1,0 +1,10 @@
+pydicom>=2.4.0
+nibabel>=5.0.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+anthropic>=0.40.0
+Pillow>=10.0.0
+click>=8.1.0
+rich>=13.0.0
+python-dotenv>=1.0.0
+PyYAML>=6.0

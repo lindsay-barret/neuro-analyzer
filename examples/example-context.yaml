@@ -1,0 +1,70 @@
+# =====================================================================
+# example-context.yaml — TEMPLATE / FICTIONAL CASE
+#
+# This file is illustrative. The "patient" below is entirely synthetic.
+# Copy this file, rename it (e.g. `my-case-context.yaml`), and adapt the
+# fields to your own case. The .gitignore in this repository blocks file
+# names matching `*-context.yaml`, `patient-context.*`, and similar so
+# real cases stay on your machine.
+#
+# Pass the file at runtime with `--context-file path/to/your-context.yaml`
+# or via the environment variable `PATIENT_CONTEXT_FILE`.
+#
+# All fields below are OPTIONAL. When a field is missing, the pipeline
+# falls back to a neutral, unbiased default (see config.DEFAULT_*).
+# =====================================================================
+
+# Optional title used as the H1 of the generated qualitative report.
+# When omitted, the patient_name from the DICOM header is used, or a
+# fully generic title if that is also unavailable.
+report_title: "Brain MRI analysis — pediatric subject (fictional illustrative case)"
+
+# Free-form anonymized clinical context block injected into the Vision
+# prompt and shown at the top of the quantitative report. Keep this
+# de-identified: no name, no exact date of birth, no MRN, no institution
+# unless that detail matters scientifically.
+patient_context: |
+  Fictional pediatric subject: 8-year-old child, right-handed.
+  Reason for examination: left-sided unilateral motor delay noted after
+  18 months, exploring a possible malformation of cortical development.
+  History: term birth, no documented neonatal distress.
+  Genetic studies in progress.
+  Scanner: 3T MRI (generic model), pediatric structural protocol.
+
+# Free-form prose telling the Vision model what the user is looking for.
+# Keep neutral — listing observations to look for, NOT presupposing a
+# diagnosis. The model is more useful when it observes than when it
+# confirms.
+diagnostic_focus: |
+  Describe this slice comprehensively and impartially. In particular,
+  assess: cortical thickness by lobe, quality of the gray matter / white
+  matter interface, gyrification pattern, presence of gray matter
+  heterotopia, abnormalities of the corpus callosum and ventricles,
+  hemispheric asymmetry. Do not presuppose any diagnosis — report what
+  you observe, not what you expect.
+
+# Optional per-sequence overrides. Keys are sequence types (lower-case),
+# matching what the pipeline detects from DICOM SeriesDescription.
+# Missing entries fall back to neutral defaults from config.py.
+sequence_specific_notes:
+  swi: |
+    For SWI slices, systematically look for: focal hypointensities
+    (microhemorrhages, calcifications), developmental venous anomalies,
+    vascular malformations, signal asymmetry.
+  flair: |
+    For FLAIR slices, report any focal cortical or subcortical
+    hyperintensity and any loss of cortex/white-matter contrast.
+
+# Optional clinical-correlation prose. Each non-empty entry becomes a
+# subsection in section 7 of the qualitative report. Omit the whole key
+# (or leave entries blank) to skip the section entirely — the report
+# simply will not show it. Arbitrary user-defined keys are accepted; the
+# subsection heading will be the key name (title-cased).
+clinical_correlation:
+  development: |
+    The left-sided unilateral motor delay could be explained by a
+    structural lesion of the right corticospinal tract or its primary
+    motor cortex. A right peri-rolandic cortical asymmetry, or a right
+    peri-ventricular heterotopia, would be consistent with this picture.
+  imaging_history: |
+    No prior MRI available for comparison.

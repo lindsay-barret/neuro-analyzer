@@ -1,0 +1,12 @@
+# Ruff linter configuration for neuro-analyzer.
+# See https://docs.astral.sh/ruff/configuration/ for full reference.
+
+[lint]
+# Default ruff rules (E, F, W) apply.
+ignore = [
+    "E402",  # Module level import not at top of file.
+             # Intentional in main.py: PYTHONIOENCODING=utf-8 and
+             # stdout reconfiguration must happen BEFORE Rich imports,
+             # otherwise cp1252 Windows terminals crash on non-ASCII
+             # output in CLI banners and reports.
+]
