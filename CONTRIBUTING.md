@@ -160,7 +160,7 @@ pip install <package>
 Move-Item $env:TEMP\sitecustomize.py.bak .venv\Lib\site-packages\sitecustomize.py
 ```
 
-Reinstate `sitecustomize.py` immediately after — without it, subsequent SSL-using scripts (notably the OpenNeuro validation download) lose their Avast bypass.
+Reinstate `sitecustomize.py` immediately after — without it, subsequent SSL-using scripts (notably the Anthropic API client used by the visual analysis step) lose their TLS bypass.
 
 ### Code style
 
