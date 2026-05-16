@@ -2,8 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-<!-- DOI badge se ajoutará en la primera release Zenodo / DOI badge will be added at first Zenodo release -->
-<!-- [![DOI](https://zenodo.org/badge/DOI/XXXX/zenodo.XXXXXXX.svg)](https://doi.org/XXXX/zenodo.XXXXXXX) -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20222509.svg)](https://doi.org/10.5281/zenodo.20222509)
 
 > ## ⚠️ AVISO MÉDICO / MEDICAL DISCLAIMER
 >

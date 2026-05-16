@@ -27,13 +27,15 @@ license: MIT
 repository-code: "https://github.com/lindsay-barret/neuro-analyzer"
 url: "https://github.com/lindsay-barret/neuro-analyzer"
 version: 0.1.0
-date-released: "2026-05-15"  # actualizar al hacer release / update at release time
-# DOI a agregar después del primer release Zenodo:
-# doi: 10.5281/zenodo.XXXXXXX
-# identifiers:
-#   - type: doi
-#     value: 10.5281/zenodo.XXXXXXX
-#     description: "Zenodo archive of v0.1.0"
+date-released: "2026-05-16"
+doi: 10.5281/zenodo.20222510
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.20222510
+    description: "Zenodo archive of v0.1.0"
+  - type: doi
+    value: 10.5281/zenodo.20222509
+    description: "Zenodo concept DOI (resolves to latest version)"
 references:
   - type: software
     title: "FastSurfer"
