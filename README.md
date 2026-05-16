@@ -37,7 +37,6 @@ El proyecto nació de un caso pediátrico real donde un reanálisis cuantitativo
 
 - Investigadores en neuroimagen pediátrica
 - Educadores que enseñan análisis de IRM
-- Padres con formación técnica que desean comprender mejor estudios de sus hijos (siempre en complemento, nunca en reemplazo, de la evaluación médica)
 - Desarrolladores que quieren extender el pipeline
 
 ### Pipeline
@@ -140,7 +139,6 @@ The project originated from a real pediatric case where quantitative re-analysis
 
 - Pediatric neuroimaging researchers
 - Educators teaching MRI analysis
-- Technically-skilled parents seeking better understanding of their children's studies (always as complement, never replacement, of medical evaluation)
 - Developers extending the pipeline
 
 ### Pipeline
